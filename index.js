@@ -63,7 +63,13 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(role){
+    if (role === "teacher" || role === "student") {
+      return this.price - this.price * 0.25;
+    }else {
+      return this.price - this.price * 0.10;
+    }
+  }
 }
 
 
@@ -86,12 +92,50 @@ Using the reviews array above:
 */
 
 
+///////////////
+
+// Task 3 Solution 1
+    const findMe = "Julius";
+    for (let i = 0; i < reviews.length; i++) {
+      if (reviews[i].name === findMe) {
+        console.log(reviews[i]);
+      }
+    }
+
+// Task 3 Solution 2
+    // console.log(reviews[5]);
+
+// Task 3 Solution 3
+//////////////// went overboard, really wanted to have user input
+/*
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+rl.question("What is your name? ", function (answer) {
+  const findMe = answer;
+      for (let i = 0; i < reviews.length; i++) {
+      if (reviews[i].name === findMe) {
+        console.log(reviews[i]);
+      }
+    } 
+console.log("Goodbye");
+rl.close();
+ });
+*/
+/////////////////////
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+const iNoLikeCounting = reviews.length - 1;
+reviews[iNoLikeCounting].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
+console.log(reviews);
 
 
 
@@ -107,8 +151,14 @@ Use the addReview function below to do the following:
 */
 
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(array, name, rating, feedback){
+  const newEntry = {
+    name: name,
+    rating: rating,
+    feedback: feedback
+  }
+  array.push(newEntry);
+  return array;
 }
 
 
@@ -124,8 +174,8 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+  return array[index].name + " gave the restaurant a " + array[index].rating + " star review, and their feedback was: " + array[index].feedback;
 }
 
   
@@ -143,8 +193,9 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  const index = array.length - 1;
+  return array[index].name + " gave the restaurant a " + array[index].rating + " star review, and their feedback was: " + array[index].feedback;
 } 
 
 
