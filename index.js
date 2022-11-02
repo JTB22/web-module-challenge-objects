@@ -17,14 +17,19 @@ The function should:
 
 
 function createMenuItem(name, cost, cat){
-  const menuItem = {
+  // const menuItem = {
+  //   name: name,
+  //   price: cost,
+  //   category: cat
+  // }
+  // return menuItem;
+  return {
     name: name,
     price: cost,
     category: cat
   }
-  return menuItem;
 }
-
+ console.log('task 1: ', createMenuItem('tacos', 8, 'Lunch'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -37,12 +42,15 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
-const item1 = createMenuItem('steak', 22, 'dinner');
-console.log(item1);
-const item2 = createMenuItem('salad', 11, 'lunch');
-console.log(item2);
-const item3 = createMenuItem('smoothie', 6, 'breakfast');
-console.log(item3);
+// const item1 = createMenuItem('steak', 22, 'dinner');
+//  console.log(item1);
+// const item2 = createMenuItem('salad', 11, 'lunch');
+// console.log(item2);
+// const item3 = createMenuItem('smoothie', 6, 'breakfast');
+// console.log(item3);
+ console.log('task 1b: ', createMenuItem('steak', 22, 'dinner'));
+ console.log('task 1b: ', createMenuItem('salad', 11, 'lunch'));
+ console.log('task 1b: ', createMenuItem('smoothie', 6, 'breakfast'));
 
 
 
@@ -72,7 +80,7 @@ const burger = {
   }
 }
 
-
+console.log('task 2: ', burger.discount('teacher'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -95,15 +103,15 @@ Using the reviews array above:
 ///////////////
 
 // Task 3 Solution 1
-    const findMe = "Julius";
-    for (let i = 0; i < reviews.length; i++) {
-      if (reviews[i].name === findMe) {
-        console.log(reviews[i]);
-      }
-    }
+    // const findMe = "Julius";
+    // for (let i = 0; i < reviews.length; i++) {
+    //   if (reviews[i].name === findMe) {
+    //     console.log(reviews[i]);
+    //   }
+    // }
 
 // Task 3 Solution 2
-    // console.log(reviews[5]);
+    console.log('task 3: ', reviews[5].feedback);
 
 // Task 3 Solution 3
 //////////////// went overboard, really wanted to have user input
@@ -135,7 +143,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 */
 const iNoLikeCounting = reviews.length - 1;
 reviews[iNoLikeCounting].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
-console.log(reviews);
+console.log('task 4: ', reviews);
 
 
 
@@ -161,6 +169,8 @@ function addReview(array, name, rating, feedback){
   return array;
 }
 
+console.log('task 5: ', addReview(reviews, 'Billy', 2, 'Lame food!'));
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -178,6 +188,7 @@ function getReviewByIndex(array, index) {
   return array[index].name + " gave the restaurant a " + array[index].rating + " star review, and their feedback was: " + array[index].feedback;
 }
 
+console.log('task 6: ', getReviewByIndex(reviews,0));
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -198,7 +209,7 @@ function getLastReview(array) {
   return array[index].name + " gave the restaurant a " + array[index].rating + " star review, and their feedback was: " + array[index].feedback;
 } 
 
-
+console.log('task 7: ', getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
